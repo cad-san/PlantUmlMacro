@@ -1,0 +1,24 @@
+@startuml
+
+!include "../sequence_macro.h"
+
+participant main as A
+participant cliant as B
+participant server as C
+
+func(A, B, singpleFunc( ) )
+
+func_begin(A, B, longStepFunc( ) )
+'{
+	local_func(B,localFunc( ) )
+	func(B, C, send_message( ) )
+
+	local_func_begin(B,longStepLocalFunc( ))
+	'{
+		func(B, C, send_message( ) )
+	'}
+	local_func_end( B )
+'}
+func_end(A, B)
+
+@enduml
