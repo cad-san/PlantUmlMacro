@@ -1,5 +1,6 @@
 @startuml
 
+!include "../sequence_skin.h"
 !include "../sequence_macro.h"
 
 participant main as A
