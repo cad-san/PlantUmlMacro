@@ -1,0 +1,31 @@
+@startuml
+
+!include "../sequence_skin.h"
+!include "../sequence_macro.h"
+
+participant View as V
+participant Controller as C
+participant Model as M
+
+func_begin_anno(V, C, onClick(), ユーザがボタンを押す )
+'{
+	send_message(C, M, input() )
+'}
+func_end(V, C)
+
+local_func_begin_anno(M,calc(), 応答用のデータ生成)
+'{
+	local_func_anno(M,validation(), 入力値のチェック )
+	send_message(M, V, notify())
+'}
+local_func_end( M )
+
+|||
+
+local_func_begin_anno(V, update(), 再描画)
+'{
+	func_anno(V, M, get(), パラメータ取得)
+'}
+local_func_end(V)
+
+@enduml
