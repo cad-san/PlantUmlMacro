@@ -12,11 +12,11 @@ func(A, B, singpleFunc( ) )
 func_begin(A, B, longStepFunc( ) )
 '{
 	local_func(B,localFunc( ) )
-	func(B, C, send_message( ) )
+	send_message(B, C, send_message )
 
 	local_func_begin(B,longStepLocalFunc( ))
 	'{
-		func(B, C, send_message( ) )
+		send_message(B, C, send_message )
 	'}
 	local_func_end( B )
 '}

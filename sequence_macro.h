@@ -35,3 +35,10 @@
 !definelong local_func_end(a)
 	deactivate a
 !enddefinelong
+
+'***********************************************
+' message
+'***********************************************
+!definelong send_message(x,y,message)
+	x -[#3333ff]>> y : <b> <i> message </i> </b>
+!enddefinelong
